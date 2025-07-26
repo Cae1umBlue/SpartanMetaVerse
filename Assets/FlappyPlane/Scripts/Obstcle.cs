@@ -17,11 +17,11 @@ namespace FlappyPlane
 
         public float widthPadding = 4f; // 장애물 간의 X축 간격 (너비 패딩)
 
-        MiniGameManager gameManager;
+        FlappyGameManager gameManager;
 
         public void Start()
         {
-            gameManager = MiniGameManager.Instance;
+            gameManager = FlappyGameManager.Instance;
         }
 
         public Vector3 SetRandomPlace(Vector3 LastPosition, int obstaclCount)

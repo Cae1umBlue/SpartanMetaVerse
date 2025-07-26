@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 namespace FlappyPlane
 {
-    public class MiniGameManager : MonoBehaviour
+    public class FlappyGameManager : MonoBehaviour
     {
-        static MiniGameManager gameManager;
+        static FlappyGameManager gameManager;
 
-        public static MiniGameManager Instance { get { return gameManager; } } 
+        public static FlappyGameManager Instance { get { return gameManager; } } 
 
         private int currentScore = 0;
 
@@ -30,8 +30,9 @@ namespace FlappyPlane
 
         public void GameOver()
         {
-            Debug.Log("Game Over"); // 게임오버 문구 출력
+            int finalScore = currentScore;
             uiManager.SetRestart(); // UI매니저에서 재시작 안내 텍스트 활성화
+
         }
 
         public void RestartGame()
