@@ -23,7 +23,7 @@ public class PlayerController : BaseController
     {
         Vector2 mousePosition = inputValue.Get<Vector2>();
         Vector2 worldPos = camera.WorldToScreenPoint(mousePosition);
-        lookDirection = Vector2.zero;
+        lookDirection = (worldPos - (Vector2)transform.position);
 
         if(lookDirection.magnitude < .9f)
         {
