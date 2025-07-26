@@ -39,17 +39,6 @@ public class MiniGameInput : MonoBehaviour
 
     private void EnterMiniGame()
     {
-        Debug.Log($"[MiniGameInput] EnterMiniGame 호출");
-
-        Debug.Log($"GameManager.instance: {(GameManager.instance == null ? "NULL" : "OK")}");
-        Debug.Log($"currentZone: {(currentZone == null ? "NULL" : "OK")}");
-
-        if (GameManager.instance == null || currentZone == null)
-        {
-            Debug.LogError("EnterMiniGame 호출 실패 - 위 로그 확인");
-            return;
-        }
-
         GameManager.instance.EnterMiniGame(currentZone.targetScene);
     }
 
