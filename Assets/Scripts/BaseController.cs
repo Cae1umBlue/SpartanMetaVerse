@@ -28,7 +28,7 @@ public class BaseController : MonoBehaviour
     {
         Rotate(LookDirection);
     }
-    protected virtual void FixedUpdate()
+    protected virtual void FixedUpdate() // rigidbody 오브젝트 조정 시 주로 사용
     {
         Movement(LookDirection);
     }
