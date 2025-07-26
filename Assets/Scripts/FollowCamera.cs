@@ -12,14 +12,14 @@ public class FollowCamera : MonoBehaviour
     {
         if (target == null)
             return;
-        
+
         offsetX = transform.position.x - target.position.x;
         offsetY = transform.position.y - target.position.y;
     }
 
     private void Update()
     {
-        if(target == null)
+        if (target == null)
             return;
         Vector3 pos = transform.position;
         pos.x = target.position.x + offsetX;
