@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnterMiniGame(Scenes scene)
+    public void ChangeScene(Scenes scene)
     {
         SceneManager.instance.LoadScene(scene);
     }

@@ -39,7 +39,7 @@ public class MiniGameInput : MonoBehaviour
 
     private void EnterMiniGame()
     {
-        GameManager.instance.EnterMiniGame(currentZone.targetScene);
+        GameManager.instance.ChangeScene(currentZone.targetScene);
     }
 
 }
