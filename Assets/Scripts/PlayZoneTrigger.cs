@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class PlayZoneTrigger : MonoBehaviour
 {
+    public Scenes targetScene = Scenes.TheStack;
+    private bool isPlayerInside = false; // 플레이어가 플레이존에 들어왔는지 유무
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            isPlayerInside = true;
             Debug.Log("게임존 입장");
         }
     }
@@ -17,30 +21,10 @@ public class PlayZoneTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            isPlayerInside = false;
             Debug.Log("게임존 퇴장");
         }
     }
-}
 
-public class MiniGameInput : MonoBehaviour
-{
-    public string miniGameName = "The Stack";
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            EnterMiniGame();
-        }
-    }
-
-    private bool CanEnterMiniGame()
-    {
-        return true;
-    }
-
-    private void EnterMiniGame()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(miniGameName);
-    }
+    public bool IsPlayerInside() => isPlayerInside;
 }
