@@ -12,6 +12,8 @@ namespace FlappyPlane
         public TextMeshProUGUI scoreText;
         public Button exitButton;
 
+        [SerializeField] private Scenes mainScene = Scenes.MainScene;
+
         void Start()
         {
             if (restartText == null)
@@ -31,6 +33,12 @@ namespace FlappyPlane
         {
             restartText.gameObject.SetActive(true);
             exitButton.gameObject.SetActive(true);
+        }
+
+        public void OnExitGame()
+        {
+            string sceneName = mainScene.ToString();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }
 
         public void UpdateScore(int socre)

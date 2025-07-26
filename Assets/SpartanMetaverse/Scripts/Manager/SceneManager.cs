@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Scenes
 {
-    Main,
+    MainScene,
     FlappyPlane,
     TheStack
 }

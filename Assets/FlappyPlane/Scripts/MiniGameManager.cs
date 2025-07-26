@@ -40,6 +40,11 @@ namespace FlappyPlane
             UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene);
         }
 
+        public void ExitGame()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
+
 
         public void AddScore(int score)
         {
