@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace FlappyPlane
 {
@@ -9,6 +10,7 @@ namespace FlappyPlane
     {
         public TextMeshProUGUI restartText;
         public TextMeshProUGUI scoreText;
+        public Button exitButton;
 
         void Start()
         {
@@ -23,10 +25,12 @@ namespace FlappyPlane
             }
 
             restartText.gameObject.SetActive(false);
+            exitButton.gameObject.SetActive(false);
         }
         public void SetRestart()
         {
             restartText.gameObject.SetActive(true);
+            exitButton.gameObject.SetActive(true);
         }
 
         public void UpdateScore(int socre)
