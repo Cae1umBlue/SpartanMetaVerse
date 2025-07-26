@@ -10,7 +10,7 @@ public enum Scenes
 }
 public class SceneManager : MonoBehaviour
 {
-    public static SceneManager instance {  get; private set; }
+    public static SceneManager instance;
 
     private void Awake()
     {
