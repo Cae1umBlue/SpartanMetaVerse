@@ -14,13 +14,13 @@ namespace FlappyPlane
 
         private int currentScore = 0;
 
-        UIManager uiManager; 
-        public UIManager UIManager { get { return uiManager; } }  
+        FlappyUIManager uiManager; 
+        public FlappyUIManager UIManager { get { return uiManager; } }  
 
         private void Awake()
         {
             gameManager = this; 
-            uiManager = FindObjectOfType<UIManager>(); 
+            uiManager = FindObjectOfType<FlappyUIManager>(); 
         }
 
         public void Start()

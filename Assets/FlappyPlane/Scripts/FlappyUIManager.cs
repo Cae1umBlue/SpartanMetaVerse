@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace FlappyPlane
 {
-    public class UIManager : MonoBehaviour
+    public class FlappyUIManager : MonoBehaviour
     {
         public TextMeshProUGUI restartText;
         public TextMeshProUGUI scoreText;
