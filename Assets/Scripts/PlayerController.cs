@@ -34,4 +34,9 @@ public class PlayerController : BaseController
             lookDirection = lookDirection.normalized;
         }
     }
+
+    void OnClick(InputValue inputValue)
+    {
+
+    }
 }
