@@ -10,12 +10,17 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = null;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    public void EnterMiniGame(Scenes scene)
+    {
+        SceneManager.instance.LoadScene(scene);
     }
 }
