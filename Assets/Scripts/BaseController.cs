@@ -14,6 +14,25 @@ public class BaseController : MonoBehaviour
     protected Vector2 lookDirection = Vector2.zero;
     public Vector2 LookDirection { get { return lookDirection; } }
 
+    protected virtual void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    protected virtual void Start()
+    {
+
+    }
+
+    protected virtual void Update()
+    {
+        Rotate(LookDirection);
+    }
+    protected virtual void FixedUpdate()
+    {
+        Movement(LookDirection);
+    }
+
     private void Movement(Vector2 direction)
     {
         direction = direction * 5;
@@ -23,7 +42,7 @@ public class BaseController : MonoBehaviour
 
     private void Rotate(Vector2 direction)
     {
-        // È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Åºï¿½ï¿½Æ® * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ï¿½
+        // È¸ÀüÀ» ±¸ÇöÇÏ±â À§ÇØ ¿ªÅºÁ¨Æ® * °¢µµ¹ý º¯È¯ »ç¿ë
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bool isLeft = Mathf.Abs(rotZ) > 90f;
 
