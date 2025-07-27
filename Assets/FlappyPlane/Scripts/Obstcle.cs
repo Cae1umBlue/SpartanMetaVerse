@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FlappyPlane
+namespace MiniGames.Flappy
     {
     public class Obstcle : MonoBehaviour
     {
@@ -17,11 +17,11 @@ namespace FlappyPlane
 
         public float widthPadding = 4f; // 장애물 간의 X축 간격 (너비 패딩)
 
-        FlappyGameManager gameManager;
+        GameManager gameManager;
 
         public void Start()
         {
-            gameManager = FlappyGameManager.Instance;
+            gameManager = GameManager.Instance;
         }
 
         public Vector3 SetRandomPlace(Vector3 LastPosition, int obstaclCount)

@@ -4,23 +4,23 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace FlappyPlane
+namespace MiniGames.Flappy
 {
-    public class FlappyGameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
-        static FlappyGameManager gameManager;
+        static GameManager gameManager;
 
-        public static FlappyGameManager Instance { get { return gameManager; } } 
+        public static GameManager Instance { get { return gameManager; } } 
 
         private int currentScore = 0;
 
-        FlappyUIManager uiManager; 
-        public FlappyUIManager UIManager { get { return uiManager; } }  
+        UIManager uiManager; 
+        public UIManager UIManager { get { return uiManager; } }  
 
         private void Awake()
         {
             gameManager = this; 
-            uiManager = FindObjectOfType<FlappyUIManager>(); 
+            uiManager = FindObjectOfType<UIManager>(); 
         }
 
         public void Start()

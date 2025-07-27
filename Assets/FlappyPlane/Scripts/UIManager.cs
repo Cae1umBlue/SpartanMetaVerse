@@ -4,9 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FlappyPlane
+namespace MiniGames.Flappy
 {
-    public class FlappyUIManager : MonoBehaviour
+    public class UIManager : MonoBehaviour
     {
         public TextMeshProUGUI restartText;
         public TextMeshProUGUI scoreText;
@@ -33,9 +33,9 @@ namespace FlappyPlane
             exitButton.gameObject.SetActive(true);
         }
 
-        public void OnExitGame()
+        public void OnExitGame() // Exit 버튼 클릭시 메인씬으로 복귀
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
 
         public void UpdateScore(int socre)

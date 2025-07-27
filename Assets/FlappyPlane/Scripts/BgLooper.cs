@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FlappyPlane
+namespace MiniGames.Flappy
 {
     public class BgLooper : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FlappyPlane
+namespace MiniGames.Flappy
 {
     public class Player : MonoBehaviour
     {
@@ -18,11 +18,11 @@ namespace FlappyPlane
 
         public bool godMode = false; // 일종의 관리자 모드
 
-        FlappyGameManager gameManager;
+        GameManager gameManager;
 
         void Start()
         {
-            gameManager = FlappyGameManager.Instance;
+            gameManager = GameManager.Instance;
 
             animator = GetComponentInChildren<Animator>(); //inchildren : 하위(자식)오브젝트 검색 가능
             _rigidbody = GetComponent<Rigidbody2D>();
