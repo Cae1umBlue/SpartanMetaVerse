@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI bestScoreText; // 최고점수 
-    [SerializeField] private GameObject miniGameUIPanel; // 미니게임 판넬UI
+    [SerializeField] private GameObject miniGameUIPanel; // 미니게임 안내 판넬UI
 
     public static UIManager instance;
 
@@ -25,7 +26,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ShowPanelUI(string sceneName) // 미니게임 판넬 표시
+    public void ShowPanelUI(string sceneName) // 미니게임 진입 판넬 표시
     {
         currentSceneName = sceneName;
         miniGameUIPanel.SetActive(true);
@@ -36,13 +37,18 @@ public class UIManager : MonoBehaviour
         miniGameUIPanel.SetActive(false);
     }
 
-    public void OnStartButton() // 게임 시작 버튼
+    public void EnterMiniGame() // 게임 시작 버튼
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneName);
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void OnExitButton() // 게임 퇴장 버튼
     {
-        HidePanelUI();
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
