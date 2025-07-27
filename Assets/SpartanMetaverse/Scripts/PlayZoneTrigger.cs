@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayZoneTrigger : MonoBehaviour
 {
-    [SerializeField] private Scenes sceneName;
-    public Scenes TargetScene => sceneName;
-
+    [SerializeField] private string sceneName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -15,7 +14,7 @@ public class PlayZoneTrigger : MonoBehaviour
 
             if (UIManager.instance != null)
             {
-                UIManager.instance.ShowPanelUI(this);
+                UIManager.instance.ShowPanelUI(sceneName);
             }
         }
     }

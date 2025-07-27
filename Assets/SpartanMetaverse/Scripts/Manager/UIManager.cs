@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance;
 
-    private PlayZoneTrigger currentZone;
+    private string currentSceneName;
 
     private void Awake()
     {
@@ -25,9 +25,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ShowPanelUI(PlayZoneTrigger zone) // 미니게임 판넬 표시
+    public void ShowPanelUI(string sceneName) // 미니게임 판넬 표시
     {
-        currentZone = zone;
+        currentSceneName = sceneName;
         miniGameUIPanel.SetActive(true);
     }
 
@@ -38,10 +38,7 @@ public class UIManager : MonoBehaviour
 
     public void OnStartButton() // 게임 시작 버튼
     {
-        if (currentZone != null)
-        {
-            GameManager.instance.ChangeScene(currentZone.TargetScene);
-        }
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void OnExitButton() // 게임 퇴장 버튼

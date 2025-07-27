@@ -18,9 +18,4 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void ChangeScene(Scenes scene)
-    {
-        SceneManager.instance.LoadScene(scene);
-    }
 }
