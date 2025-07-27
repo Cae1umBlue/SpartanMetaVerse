@@ -12,7 +12,7 @@ namespace MiniGames.Flappy
 
         void Start() // 모든 장애물을 찾아와서 랜덤배치
         {
-            Obstcle[] obstacles = GameObject.FindObjectsOfType<Obstcle>(); // obstacle 이 달려 있는 오브젝트 전부 가져옴
+            Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>(); // obstacle 이 달려 있는 오브젝트 전부 가져옴
             obstacleLastPosition = obstacles[0].transform.position; // 첫번째 장애물의 위치를 저장
             obstacleCount = obstacles.Length; // 장애물의 개수를 계산하여 저장
 
@@ -36,7 +36,7 @@ namespace MiniGames.Flappy
                 return;
             }
 
-            Obstcle obstacle = collision.GetComponent<Obstcle>(); // 충돌한 객체가 obstacle인지 확인
+            Obstacle obstacle = collision.GetComponent<Obstacle>(); // 충돌한 객체가 obstacle인지 확인
             if (obstacle)
             {
                 obstacleLastPosition = obstacle.SetRandomPlace(obstacleLastPosition, obstacleCount); // 장애물 충돌시 랜덤 위치로 재배치

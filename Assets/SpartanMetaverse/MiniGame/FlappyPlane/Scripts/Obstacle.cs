@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MiniGames.Flappy
     {
-    public class Obstcle : MonoBehaviour
+    public class Obstacle : MonoBehaviour
     {
         public float highPosY = 1f; //장애물의 Y축 상한선
         public float lowPosY = -1f; //장애물의 y축 하한선
@@ -27,7 +27,7 @@ namespace MiniGames.Flappy
         public Vector3 SetRandomPlace(Vector3 LastPosition, int obstaclCount)
         {
             float holeSize = Random.Range(holeSizeMin, holeSizeMax); // 구멍 크기는 랜덤
-            float halfHoleSize = holeSize; // 구멍 크기를 반으로 나누어 상단과 하단 객체의 Y위치 설정
+            float halfHoleSize = holeSize / 2f; // 구멍 크기를 반으로 나누어 상단과 하단 객체의 Y위치 설정
 
             topObject.localPosition = new Vector3(0, halfHoleSize);
             bottomObject.localPosition = new Vector3(0, -halfHoleSize);
