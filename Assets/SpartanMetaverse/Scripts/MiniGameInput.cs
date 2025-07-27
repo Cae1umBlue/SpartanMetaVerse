@@ -2,41 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//public class MiniGameInput : MonoBehaviour
-//{
-//    private PlayZoneTrigger currentZone;
+public class MiniGameInput : MonoBehaviour
+{
+    public string miniGameSceneName = "FlappyBirdScene";
 
-//    private void OnTriggerEnter2D(Collider2D collision)
-//    {
-//        PlayZoneTrigger zone = collision.GetComponent<PlayZoneTrigger>();
-//        if (zone != null)
-//        {
-//            currentZone = zone;
-//        }
-//    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (CanEnterMiniGame()) // 조건을 확인 (예: UI가 켜져 있을 때)
+            {
+                EnterMiniGame();
+            }
+        }
+    }
 
-//    private void OnTriggerExit2D(Collider2D collision)
-//    {
-//        PlayZoneTrigger zone = collision.GetComponent<PlayZoneTrigger>();
-//        if (zone != null && zone == currentZone)
-//        {
-//            currentZone = null;
-//        }
-//    }
+    private bool CanEnterMiniGame()
+    {
+        // 예시: 상호작용 가능 영역에 들어가 있고, UI가 켜져 있을 때 등
+        return true;
+    }
 
-//    private void Update()
-//    {
+    private void EnterMiniGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(miniGameSceneName);
+    }
+}
 
-//    }
-
-//    private bool CanEnterMiniGame()
-//    {
-//        return true;
-//    }
-
-//    private void EnterMiniGame()
-//    {
-//        GameManager.instance.ChangeScene(currentZone.targetScene);
-//    }
-
-//}
