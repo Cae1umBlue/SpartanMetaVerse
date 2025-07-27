@@ -2831,7 +2831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f0ad3c43ef2fc4f82772417c3fd888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGameSceneName: FlappyBirdScene
 --- !u!1 &1353432947
 GameObject:
   m_ObjectHideFlags: 0
@@ -11441,6 +11440,6 @@ SceneRoots:
   - {fileID: 1219807222}
   - {fileID: 718739017}
   - {fileID: 807158410}
-  - {fileID: 1835487018}
   - {fileID: 606209332}
   - {fileID: 1109837337}
+  - {fileID: 1835487018}

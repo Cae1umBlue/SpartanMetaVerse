@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/SpartanMetaverse/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/FlappyPlane/Scenes/FlappyPlane.unity
+    path: Assets/SpartanMetaverse/Scripts/MiniGame/FlappyPlane/Scenes/FlappyPlane.unity
     guid: 2fbcd3cdf34e7b84083602639149a55d
   - enabled: 1
     path: Assets/SpartanMetaverse/Scenes/TheStack.unity

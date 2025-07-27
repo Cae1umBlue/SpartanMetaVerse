@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
 
     public void OnStartButton() // 게임 시작 버튼
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneName);
     }
 
     public void OnExitButton() // 게임 퇴장 버튼
