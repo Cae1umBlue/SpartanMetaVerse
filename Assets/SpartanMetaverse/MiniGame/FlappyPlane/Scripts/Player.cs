@@ -6,7 +6,6 @@ using UnityEngine;
     {
         Animator animator;
         Rigidbody2D _rigidbody;
-        FlappyGameManager gameManager;
 
         public float flapForce = 6f;
         public float fowardSpeed = 3f;
@@ -19,7 +18,7 @@ using UnityEngine;
 
         void Start()
         {
-            gameManager = FlappyGameManager.Instance;
+            //gameManager = FlappyGameManager.Instance;
 
             animator = GetComponentInChildren<Animator>(); //inchildren : 하위(자식)오브젝트 검색 가능
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -81,6 +80,6 @@ using UnityEngine;
             deathCooldown = 1f;
 
             animator.SetInteger("IsDie", 1);
-            gameManager.GameOver();
+            //gameManager.GameOver();
         }
     }

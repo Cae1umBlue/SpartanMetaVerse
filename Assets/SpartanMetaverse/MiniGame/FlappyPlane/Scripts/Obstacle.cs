@@ -32,9 +32,9 @@ using UnityEngine;
             return placePosition;
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            Player player = collision.GetComponent<Player>();
-            if (player != null) gameManager.AddScore(1);
-        }
+        //private void OnTriggerExit2D(Collider2D collision)
+        //{
+        //    Player player = collision.GetComponent<Player>();
+        //    if (player != null) gameManager.AddScore(1);
+        //}
     }
