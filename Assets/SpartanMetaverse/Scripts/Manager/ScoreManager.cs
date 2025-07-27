@@ -45,4 +45,15 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         UpdateScoreUI();
     }
+
+    public void SaveHighScore()
+    {
+        int bestScore = PlayerPrefs.GetInt("HighScore", 0); // 저장된 최고 점수 불러오기
+
+        if (score > bestScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score); // 최고 점수 갱신
+            PlayerPrefs.Save(); // 즉시 저장
+        }
+    }
 }

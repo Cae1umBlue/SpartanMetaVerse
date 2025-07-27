@@ -8,6 +8,7 @@ namespace MiniGames.Flappy
     {
         Animator animator;
         Rigidbody2D _rigidbody;
+        GameManager gameManager;
 
         public float flapForce = 6f;
         public float fowardSpeed = 3f;
@@ -17,8 +18,6 @@ namespace MiniGames.Flappy
         bool isFlap = false; // 점프 유무
 
         public bool godMode = false; // 일종의 관리자 모드
-
-        GameManager gameManager;
 
         void Start()
         {
@@ -41,14 +40,7 @@ namespace MiniGames.Flappy
         {
             if (isDead)
             {
-                if (deathCooldown <= 0f)
-                {
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) //스페이스바 누를 때마다 true 반환
-                    {
-                        gameManager.RestartGame();
-                    }
-                }
-                else
+                if (deathCooldown > 0f)
                 {
                     deathCooldown -= Time.deltaTime;
                 }

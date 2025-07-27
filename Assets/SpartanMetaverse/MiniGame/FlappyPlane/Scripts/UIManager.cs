@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 namespace MiniGames.Flappy
 {
     public class UIManager : MonoBehaviour
     {
-        public TextMeshProUGUI restartText;
-        public TextMeshProUGUI scoreText;
+        public TextMeshProUGUI currentScoreText;
+        public TextMeshProUGUI bestScoreText;
+        public Image scoreBoard;
+        public Button restartButton;
         public Button exitButton;
 
         MiniGameEndHandler gameEndHandler;
@@ -17,16 +20,6 @@ namespace MiniGames.Flappy
 
         void Start()
         {
-            if (restartText == null)
-            {
-                Debug.Log("restart text is null");
-            }
-
-            if (scoreText == null)
-            {
-                Debug.Log("score text is null");
-            }
-
             gameEndHandler = FindObjectOfType<MiniGameEndHandler>();
 
             if (gameEndHandler == null)
@@ -34,13 +27,17 @@ namespace MiniGames.Flappy
                 Debug.LogError("MiniGameEndHandler가 씬에 없습니다!");
             }
 
-            restartText.gameObject.SetActive(false);
-            exitButton.gameObject.SetActive(false);
+            scoreBoard.gameObject.SetActive(false);
+
         }
         public void SetRestart()
         {
-            restartText.gameObject.SetActive(true);
-            exitButton.gameObject.SetActive(true);
+            scoreBoard.gameObject.SetActive(true);
+        }
+
+        public void OnRestartButton()
+        {
+            GameManager.Instance.RestartGame();
         }
 
         public void OnExitGame()
@@ -51,7 +48,7 @@ namespace MiniGames.Flappy
 
         public void UpdateScore(int socre)
         {
-            scoreText.text = socre.ToString();
+            currentScoreText.text = socre.ToString();
         }
     }
 }
