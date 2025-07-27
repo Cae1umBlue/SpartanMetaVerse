@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MiniGames.Flappy
-    {
     public class Obstacle : MonoBehaviour
     {
         public float highPosY = 1f; //장애물의 Y축 상한선
@@ -46,4 +44,3 @@ namespace MiniGames.Flappy
             if (player != null) gameManager.AddScore(1);
         }
     }
-}

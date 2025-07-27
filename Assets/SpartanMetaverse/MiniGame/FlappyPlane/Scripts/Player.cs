@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MiniGames.Flappy
-{
     public class Player : MonoBehaviour
     {
         Animator animator;
@@ -86,4 +84,3 @@ namespace MiniGames.Flappy
             gameManager.GameOver();
         }
     }
-}

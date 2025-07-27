@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
-namespace MiniGames.Flappy
-{
     public class UIManager : MonoBehaviour
     {
         public TextMeshProUGUI currentScoreText;
@@ -51,4 +49,3 @@ namespace MiniGames.Flappy
             currentScoreText.text = socre.ToString();
         }
     }
-}

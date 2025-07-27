@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MiniGames.Flappy
-{
     public class FollowCamera : MonoBehaviour
     {
         public Transform target;
@@ -25,4 +23,3 @@ namespace MiniGames.Flappy
             transform.position = pos;
         }
     }
-}

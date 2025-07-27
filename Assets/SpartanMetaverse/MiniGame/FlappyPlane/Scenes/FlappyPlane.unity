@@ -896,9 +896,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OnStartButton
+      - m_Target: {fileID: 1543165266}
+        m_TargetAssemblyTypeName: MiniGames.Flappy.UIManager, Assembly-CSharp
+        m_MethodName: OnRestartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4235,9 +4235,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OnExitButton
+      - m_Target: {fileID: 1543165266}
+        m_TargetAssemblyTypeName: MiniGames.Flappy.UIManager, Assembly-CSharp
+        m_MethodName: OnExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

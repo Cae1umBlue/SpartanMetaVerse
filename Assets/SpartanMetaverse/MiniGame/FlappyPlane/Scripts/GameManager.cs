@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
-namespace MiniGames.Flappy
-{
     public class GameManager : MonoBehaviour
     {
         static GameManager gameManager;
@@ -53,4 +51,4 @@ namespace MiniGames.Flappy
             uiManager.UpdateScore(currentScore); // 점수 UI에 현재 점수 출력
         }
     }
-}
+
