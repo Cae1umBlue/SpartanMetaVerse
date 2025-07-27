@@ -9,7 +9,9 @@ namespace MiniGames.Flappy
 {
     public class GameManager : MonoBehaviour
     {
-        public static GameManager Instance { get; private set; } 
+        static GameManager gameManager;
+
+        public static GameManager Instance { get { return gameManager; } } 
 
         public int currentScore = 0;
 
