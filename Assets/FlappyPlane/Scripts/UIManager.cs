@@ -35,7 +35,7 @@ namespace MiniGames.Flappy
 
         public void OnExitGame() // Exit 버튼 클릭시 메인씬으로 복귀
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+
         }
 
         public void UpdateScore(int socre)

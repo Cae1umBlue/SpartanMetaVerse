@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace MiniGames.Flappy
 {
@@ -13,6 +14,7 @@ namespace MiniGames.Flappy
         public static GameManager Instance { get { return gameManager; } } 
 
         private int currentScore = 0;
+        public int score;
 
         UIManager uiManager; 
         public UIManager UIManager { get { return uiManager; } }  
@@ -38,14 +40,7 @@ namespace MiniGames.Flappy
         public void RestartGame()
         {
             string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene);
         }
-
-        public void ExitGame()
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        }
-
 
         public void AddScore(int score)
         {
