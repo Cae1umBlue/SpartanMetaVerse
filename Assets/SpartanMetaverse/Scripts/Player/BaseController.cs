@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 캐릭터의 기본 움직임, 회전
 public class BaseController : MonoBehaviour
 {
     protected Rigidbody2D _rigidbody;
 
-    [SerializeField] private SpriteRenderer playerRenderer;
+    [SerializeField] private SpriteRenderer playerRenderer; //좌우반전 렌더러
 
-    protected Vector2 movementDirection = Vector2.zero;
+    protected Vector2 movementDirection = Vector2.zero; // 현재 이동방향
     public Vector2 MovementDirection { get { return movementDirection; } }
 
-    protected Vector2 lookDirection = Vector2.zero;
+    protected Vector2 lookDirection = Vector2.zero; // 현재 바라보는 방향
     public Vector2 LookDirection { get { return lookDirection; } }
 
     protected virtual void Awake()
@@ -35,14 +36,14 @@ public class BaseController : MonoBehaviour
 
     private void Movement(Vector2 direction)
     {
-        direction = direction * 5;
+        direction = direction * 5; // 이동속도
 
-        _rigidbody.velocity = direction;
+        _rigidbody.velocity = direction; // 실제 물리 이동
     }
 
     private void Rotate(Vector2 direction)
     {
-        // 회전을 구현하기 위해 역탄젠트 * 각도법 변환 사용
+        // 좌우 스프라이트 변경을 위한 기준 각도 계산
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bool isLeft = Mathf.Abs(rotZ) > 90f;
 
