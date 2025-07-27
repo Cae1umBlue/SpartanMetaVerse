@@ -17,7 +17,7 @@ namespace MiniGames.Flappy
         public int score;
 
         UIManager uiManager; 
-        public UIManager UIManager { get { return uiManager; } }  
+        public UIManager UIManager { get { return uiManager; } }
 
         private void Awake()
         {
@@ -40,6 +40,11 @@ namespace MiniGames.Flappy
         public void RestartGame()
         {
             string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        }
+
+        public void ExitGame()
+        {
+            uiManager.OnExitGame();
         }
 
         public void AddScore(int score)

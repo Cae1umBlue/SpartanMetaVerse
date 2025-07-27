@@ -12,6 +12,9 @@ namespace MiniGames.Flappy
         public TextMeshProUGUI scoreText;
         public Button exitButton;
 
+        MiniGameEndHandler gameEndHandler;
+        public MiniGameEndHandler MiniGameEndHandler { get { return gameEndHandler; } }
+
         void Start()
         {
             if (restartText == null)
@@ -35,13 +38,12 @@ namespace MiniGames.Flappy
 
         public void OnExitGame() // Exit 버튼 클릭시 메인씬으로 복귀
         {
-
+            MiniGameEndHandler.EndMiniGame();
         }
 
         public void UpdateScore(int socre)
         {
             scoreText.text = socre.ToString();
         }
-
     }
 }
