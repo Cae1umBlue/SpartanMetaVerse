@@ -6,7 +6,7 @@ using UnityEngine;
     {
         Animator animator;
         Rigidbody2D _rigidbody;
-        GameManager gameManager;
+        FlappyGameManager gameManager;
 
         public float flapForce = 6f;
         public float fowardSpeed = 3f;
@@ -19,7 +19,7 @@ using UnityEngine;
 
         void Start()
         {
-            gameManager = GameManager.Instance;
+            gameManager = FlappyGameManager.Instance;
 
             animator = GetComponentInChildren<Animator>(); //inchildren : 하위(자식)오브젝트 검색 가능
             _rigidbody = GetComponent<Rigidbody2D>();

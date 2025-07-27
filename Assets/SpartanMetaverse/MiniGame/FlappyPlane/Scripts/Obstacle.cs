@@ -15,12 +15,6 @@ using UnityEngine;
 
         public float widthPadding = 4f; // 장애물 간의 X축 간격 (너비 패딩)
 
-        GameManager gameManager;
-
-        public void Start()
-        {
-            gameManager = GameManager.Instance;
-        }
 
         public Vector3 SetRandomPlace(Vector3 LastPosition, int obstaclCount)
         {

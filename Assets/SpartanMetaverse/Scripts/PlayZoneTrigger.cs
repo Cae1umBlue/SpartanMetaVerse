@@ -12,9 +12,9 @@ public class PlayZoneTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            if (UIManager.instance != null)
+            if (GameManager.instance != null)
             {
-                UIManager.instance.ShowPanelUI(sceneName);
+                GameManager.instance.ShowPanelUI(sceneName);
             }
         }
     }
@@ -24,9 +24,9 @@ public class PlayZoneTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            if (UIManager.instance != null)
+            if (GameManager.instance != null)
             {
-                UIManager.instance.HidePanelUI();
+                GameManager.instance.HidePanelUI();
             }
         }
     }
