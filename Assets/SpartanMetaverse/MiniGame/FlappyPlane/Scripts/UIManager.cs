@@ -27,6 +27,13 @@ namespace MiniGames.Flappy
                 Debug.Log("score text is null");
             }
 
+            gameEndHandler = FindObjectOfType<MiniGameEndHandler>();
+
+            if (gameEndHandler == null)
+            {
+                Debug.LogError("MiniGameEndHandler가 씬에 없습니다!");
+            }
+
             restartText.gameObject.SetActive(false);
             exitButton.gameObject.SetActive(false);
         }
@@ -36,9 +43,10 @@ namespace MiniGames.Flappy
             exitButton.gameObject.SetActive(true);
         }
 
-        public void OnExitGame() // Exit 버튼 클릭시 메인씬으로 복귀
+        public void OnExitGame()
         {
-            MiniGameEndHandler.EndMiniGame();
+            gameEndHandler.score = GameManager.Instance.currentScore;
+            gameEndHandler.EndMiniGame();
         }
 
         public void UpdateScore(int socre)

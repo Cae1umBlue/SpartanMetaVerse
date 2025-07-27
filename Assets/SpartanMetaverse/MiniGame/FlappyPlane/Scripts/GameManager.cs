@@ -13,8 +13,7 @@ namespace MiniGames.Flappy
 
         public static GameManager Instance { get { return gameManager; } } 
 
-        private int currentScore = 0;
-        public int score;
+        public int currentScore = 0;
 
         UIManager uiManager; 
         public UIManager UIManager { get { return uiManager; } }
@@ -39,7 +38,7 @@ namespace MiniGames.Flappy
 
         public void RestartGame()
         {
-            string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void ExitGame()

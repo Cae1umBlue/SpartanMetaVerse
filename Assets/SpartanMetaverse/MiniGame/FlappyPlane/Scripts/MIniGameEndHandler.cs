@@ -11,6 +11,6 @@ public class MiniGameEndHandler : MonoBehaviour
         PlayerPrefs.SetInt("LastMiniGameScore", score); // 점수 저장
         PlayerPrefs.Save();
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMap");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
 }
