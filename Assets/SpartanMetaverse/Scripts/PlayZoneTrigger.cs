@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayZoneTrigger : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
+    [SerializeField] private string sceneName; //불러오고자 하는 씬 이름
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
