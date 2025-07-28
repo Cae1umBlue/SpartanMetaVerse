@@ -14,10 +14,13 @@ public class Player : MonoBehaviour
 
     bool isFlap = false; // 점프 유무
 
-    public bool godMode = false; 
+    public bool godMode = false;
+
+    FlappyGameManager gameManager;
 
     void Start()
     {
+        gameManager= FlappyGameManager.Instance;
         animator = GetComponentInChildren<Animator>(); //inchildren : 하위(자식)오브젝트 검색 가능
         _rigidbody = GetComponent<Rigidbody2D>();
 
@@ -78,5 +81,6 @@ public class Player : MonoBehaviour
         deathCooldown = 1f;
 
         animator.SetInteger("IsDie", 1);
+        gameManager.GameOver();
     }
 }
