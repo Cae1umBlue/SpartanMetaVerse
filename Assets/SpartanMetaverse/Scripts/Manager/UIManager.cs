@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI CurrentScoreText; // 현재점수
     [SerializeField] private TextMeshProUGUI bestScoreText; // 최고점수
     [SerializeField] private GameObject miniGameUIPanel;    // 미니게임 안내 판넬UI
-    [SerializeField] private GameObject GameOverPanel;      // 게임오버시 보여줄 판넬UI
 
     public static UIManager instance;
 
@@ -24,13 +23,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void SetSceneName(string sceneName)
+    public void ShowPanelUI(string sceneName) // 미니게임 진입 판넬 표시
     {
         currentSceneName = sceneName;
-    }
-
-    public void ShowPanelUI() // 미니게임 진입 판넬 표시
-    {
         miniGameUIPanel.SetActive(true);
     }
 
@@ -47,10 +42,5 @@ public class UIManager : MonoBehaviour
     public void OnExitButton() // 게임 퇴장 버튼
     {
         SceneManager.LoadScene("MainScene");
-    }
-
-    public void RestartGame() // 게임 재시작
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
