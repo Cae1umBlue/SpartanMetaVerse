@@ -14,7 +14,8 @@ public class MiniGameTrigger : MonoBehaviour
 
             if (UIManager.instance != null)
             {
-                UIManager.instance.ShowPanelUI(sceneName);
+                UIManager.instance.SetSceneName(sceneName);
+                UIManager.instance.ShowPanelUI();
             }
         }
     }

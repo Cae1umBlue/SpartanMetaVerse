@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class MiniGameController : MonoBehaviour
 {
-    public GameObject gameOverPanel;   // 종료 시 표시할 UI
-    public Text resultText;
-    public float returnDelay = 2.5f;   // 복귀까지 대기 시간
-
+    public float returnDelay = 1f;  //복귀 대기시간
     private bool gameOver = false;     // 종료 상태 확인
     private float elapsedTime = 0f;    // 시간 누적용 변수
 
@@ -23,9 +20,6 @@ public class MiniGameController : MonoBehaviour
         PlayerPrefs.SetInt("LastScore", finalScore);
         PlayerPrefs.Save();
 
-        // UI 출력
-        gameOverPanel.SetActive(true);
-        resultText.text = success ? "성공!" : "실패!";
 
         // 타이머 초기화
         elapsedTime = 0f;
@@ -40,7 +34,7 @@ public class MiniGameController : MonoBehaviour
 
             if (elapsedTime >= returnDelay)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("MainMap");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
             }
         }
     }
