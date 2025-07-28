@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     bool isFlap = false; // 점프 유무
 
-    public bool godMode = false; // 일종의 관리자 모드
+    public bool godMode = false; 
 
     void Start()
     {
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     {
         if (isDead) return;
 
-        Vector3 velocity = _rigidbody.velocity; // rigidbody의 가속도 //vector3 = 구조체
+        Vector3 velocity = _rigidbody.velocity; 
         velocity.x = fowardSpeed;
 
         if (isFlap)
@@ -64,8 +64,8 @@ public class Player : MonoBehaviour
 
         _rigidbody.velocity = velocity;
 
-        float angle = Mathf.Clamp((_rigidbody.velocity.y * 10f), -90, 90); //  각도 조절
-        transform.rotation = Quaternion.Euler(0, 0, angle); // 회전 (오일러함수)
+        float angle = Mathf.Clamp((_rigidbody.velocity.y * 10f), -90, 90);
+        transform.rotation = Quaternion.Euler(0, 0, angle); // 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
